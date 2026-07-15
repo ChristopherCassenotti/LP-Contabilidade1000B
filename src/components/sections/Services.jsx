@@ -1,0 +1,33 @@
+import { services } from "../../data/siteContent";
+import Container from "../ui/Container";
+import SectionHeading from "../ui/SectionHeading";
+
+export default function Services() {
+  return (
+    <section id="servicos" className="bg-surface py-20 sm:py-28">
+      <Container>
+        <SectionHeading
+          eyebrow="Serviços completos"
+          title="Tudo que sua empresa precisa em um só lugar."
+          className="mb-12"
+        />
+
+        <div className="grid overflow-hidden border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => (
+            <article
+              key={service}
+              className="group min-h-[205px] border-b border-r border-line bg-white p-7 transition duration-200 hover:relative hover:z-10 hover:-translate-y-0.5 hover:bg-navy-900 hover:shadow-brand"
+            >
+              <span className="block text-4xl font-bold tracking-[0.12em] text-blue-500 transition group-hover:text-white">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-12 text-3xl font-semibold leading-tight text-ink transition group-hover:text-white">
+                {service}
+              </h3>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}

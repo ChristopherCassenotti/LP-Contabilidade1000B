@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/*
+  Coloque os arquivos licenciados da Lufga em public/assets/fonts.
+  Os arquivos de fonte não acompanham este projeto.
+*/
+@font-face {
+  font-family: "Lufga";
+  src:
+    local("Lufga Regular"),
+    local("Lufga-Regular"),
+    url("/assets/fonts/LufgaRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src:
+    local("Lufga Medium"),
+    local("Lufga-Medium"),
+    url("/assets/fonts/LufgaMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src:
+    local("Lufga SemiBold"),
+    local("Lufga-SemiBold"),
+    url("/assets/fonts/LufgaSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src:
+    local("Lufga Bold"),
+    local("Lufga-Bold"),
+    url("/assets/fonts/LufgaBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Lufga", Arial, sans-serif;
+
+  --color-navy-950: #031b45;
+  --color-navy-900: #05275c;
+  --color-navy-800: #073878;
+  --color-navy-700: #0b4c9c;
+  --color-blue-500: #2589f5;
+  --color-cyan-500: #18c4f4;
+  --color-cyan-400: #3dd7ff;
+  --color-cyan-100: #dff8ff;
+  --color-ink: #0b1f3a;
+  --color-muted: #5d6d83;
+  --color-line: #dce5f0;
+  --color-surface: #f3f7fb;
+
+  --shadow-brand: 0 22px 55px rgba(4, 31, 72, 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: white;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.035em;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
