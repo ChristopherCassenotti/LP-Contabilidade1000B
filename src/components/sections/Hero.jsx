@@ -1,6 +1,7 @@
 import HeroVisual from "../layout/HeroVisual";
 import Container from "../ui/Container";
 import WhatsAppButton from "../ui/WhatsAppButton";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
@@ -9,14 +10,14 @@ export default function Hero() {
       className="relative overflow-hidden bg-navy-900 text-white py-5"
     >
       <img
-        src="/assets/globo.png"
+        src="/assets/globo.webp"
         className="absolute -left-1/7 opacity-15"
         alt=""
         width={650}
       />
       <img
-        src="/assets/leao.png"
-        className="absolute left-7/9 opacity-0 lg:opacity-5"
+        src="/assets/leao.webp"
+        className="absolute left-7/9 opacity-0 lg:opacity-5 hidden sm:block"
         alt=""
         width={650}
       />
@@ -30,25 +31,63 @@ export default function Hero() {
       />
 
       <Container className="grid min-h-[620px] items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-0">
-        <div className="relative z-10">
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.18em] c">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: { staggerChildren: 0.12, delayChildren: 0.12 },
+            },
+          }}
+          className="relative z-10"
+        >
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.55 }}
+            className="mb-5 text-sm font-bold uppercase tracking-[0.18em] c"
+          >
             Assessoria contábil completa
-          </p>
-          <h1 className="text-[clamp(2.0rem,5.2vw,4.5rem)] font-semibold leading-[1.02]">
+          </motion.p>
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 28 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.65 }}
+            className="text-[clamp(2.0rem,5.2vw,4.5rem)] font-semibold leading-[1.02]"
+          >
             Contabilidade que resolve.
             <br />
             Há mais de <span className="text-blue-500">50 anos.</span>
-          </h1>
-          <p className="mt-6 font-medium leading-relaxed text-white/75 text-lg">
+          </motion.h1>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 24 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            className="mt-6 font-medium leading-relaxed text-white/75 text-lg"
+          >
             Especialistas em{" "}
             <span className="text-blue-500">
               licitações, produtor rural e profissionais da saúde.
             </span>{" "}
             Transformamos burocracia em solução para empresas e pessoas em todo
             o Brasil.
-          </p>
+          </motion.p>
 
-          <div className=" mt-8 flex flex-col  gap-3 sm:flex-row">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className=" mt-8 flex flex-col  gap-3 sm:flex-row"
+          >
             <WhatsAppButton message="Olá, quero falar com um contador da 1000B">
               Falar com um contador
             </WhatsAppButton>
@@ -58,9 +97,13 @@ export default function Hero() {
             >
               Conheça a 1000B
             </a>
-          </div>
+          </motion.div>
 
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-lg text-white/65">
+          <motion.div
+            variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+            transition={{ duration: 0.55 }}
+            className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-lg text-white/65"
+          >
             {[
               "Atendimento próximo",
               "Especialistas por segmento",
@@ -73,13 +116,18 @@ export default function Hero() {
                 {item}
               </span>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[540px] items-end justify-center self-end lg:h-[600px]">
+        <motion.div
+          initial={{ opacity: 0, x: 50, scale: 0.96 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+          className="relative z-10 mx-auto flex w-full max-w-[540px] items-end justify-center self-end lg:h-[600px]"
+        >
           <div className="absolute inset-x-10 bottom-10 h-40 rounded-full bg-cyan-400/10 blur-3xl" />
           <HeroVisual />
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

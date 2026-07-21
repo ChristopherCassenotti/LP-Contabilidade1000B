@@ -1,13 +1,20 @@
 import { company, navItems } from "../../data/siteContent";
 import Container from "../ui/Container";
+import { motion } from "motion/react";
 
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.6 }}
+      >
       <Container className="grid gap-12 py-16 md:grid-cols-[1.2fr_0.7fr_1fr] md:gap-16">
         <div>
           <img
-            src="/assets/logo-1000b.png"
+            src="/assets/logo-1000b.webp"
             alt="1000B Assessoria Contábil"
             className="w-[132px]"
           />
@@ -57,6 +64,7 @@ export default function Footer() {
           </a>
         </div>
       </Container>
+      </motion.div>
 
       <Container className="flex flex-col justify-between gap-3 border-t border-white/10 py-6 text-sm text-white/45 sm:flex-row">
         <span>© {new Date().getFullYear()} 1000B Assessoria Contábil.</span>

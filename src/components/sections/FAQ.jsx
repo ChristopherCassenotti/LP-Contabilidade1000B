@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqs } from "../../data/siteContent";
 import Container from "../ui/Container";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -8,7 +9,13 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 sm:py-28">
       <Container className="grid items-start gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-        <div className="lg:sticky lg:top-28">
+        <motion.div
+          initial={{ opacity: 0, x: -32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="lg:sticky lg:top-28"
+        >
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-blue-500">
             Dúvidas frequentes
           </p>
@@ -27,14 +34,25 @@ export default function FAQ() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="border-t border-line">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+          className="border-t border-line"
+        >
           {faqs.map((faq, index) => {
             const open = activeIndex === index;
 
             return (
-              <article key={faq.question} className="border-b border-line">
+              <motion.article
+                key={faq.question}
+                variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.45 }}
+                className="border-b border-line"
+              >
                 <button
                   type="button"
                   aria-expanded={open}
@@ -65,10 +83,10 @@ export default function FAQ() {
                     </p>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

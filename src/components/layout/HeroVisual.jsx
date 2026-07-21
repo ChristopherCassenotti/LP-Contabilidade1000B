@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 function OpportunityChart() {
   const bars = [38, 54, 62, 49, 73, 88];
 
@@ -89,7 +90,10 @@ export default function HeroVisual() {
       "
     >
       {/* Card de oportunidades */}
-      <article
+      <motion.article
+        initial={{ opacity: 0, x: -35, y: 15 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.55 }}
         className="
           absolute
           left-0
@@ -114,10 +118,13 @@ export default function HeroVisual() {
         </strong>
 
         <OpportunityChart />
-      </article>
+      </motion.article>
 
       {/* Card de licitações */}
-      <article
+      <motion.article
+        initial={{ opacity: 0, x: 35, y: -15 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.7 }}
         className="
           absolute
           right-0
@@ -142,11 +149,14 @@ export default function HeroVisual() {
         </strong>
 
         <MonitoringChart />
-      </article>
+      </motion.article>
 
       {/* Pessoa */}
-      <img
-        src="/assets/person.png"
+      <motion.img
+        initial={{ opacity: 0, y: 45, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.35 }}
+        src="/assets/person.webp"
         alt="Especialista da 1000B Assessoria Contábil"
         className="
           pointer-events-none
@@ -167,7 +177,10 @@ export default function HeroVisual() {
       />
 
       {/* Card inferior */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.85 }}
         className="
           absolute
           bottom-0
@@ -209,7 +222,7 @@ export default function HeroVisual() {
             União da Vitória — PR
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
