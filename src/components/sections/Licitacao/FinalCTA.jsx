@@ -1,5 +1,5 @@
-import Container from "../ui/Container";
-import WhatsAppButton from "../ui/WhatsAppButton";
+import Container from "../../ui/Container";
+import WhatsAppButton from "../../ui/WhatsAppButton";
 import { motion } from "motion/react";
 
 export default function FinalCTA() {
@@ -23,10 +23,11 @@ export default function FinalCTA() {
             Vamos conversar?
           </p>
           <h2 className="max-w-4xl text-[clamp(2rem,4vw,3.65rem)] font-semibold leading-[1.08]">
-            Sua empresa merece uma contabilidade que caminha junto.
+            O próximo edital pode ser da sua empresa.
           </h2>
           <p className="mt-4 text-lg text-white/75">
-            Quanto antes você organiza, menos você paga em erro depois.
+            Não deixe a burocracia decidir por você. A análise começa com uma
+            mensagem.
           </p>
         </motion.div>
 
@@ -37,10 +38,10 @@ export default function FinalCTA() {
           transition={{ duration: 0.55, delay: 0.15 }}
         >
           <WhatsAppButton
-          message="Olá, quero falar com a 1000B"
-          className="w-full lg:w-auto"
-        >
-          Falar com a 1000B agora
+            message="Olá, quero participar de licitações"
+            className="w-full lg:w-auto"
+          >
+            Falar com a 1000B agora
           </WhatsAppButton>
         </motion.div>
       </Container>

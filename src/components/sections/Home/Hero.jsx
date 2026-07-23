@@ -1,6 +1,6 @@
-import HeroVisual from "../layout/HeroVisual";
-import Container from "../ui/Container";
-import WhatsAppButton from "../ui/WhatsAppButton";
+import HeroVisual from "../../layout/HeroVisual";
+import Container from "../../ui/Container";
+import WhatsAppButton from "../../ui/WhatsAppButton";
 import { motion } from "motion/react";
 
 export default function Hero() {

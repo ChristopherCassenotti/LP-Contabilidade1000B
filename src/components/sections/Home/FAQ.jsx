@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { faqs } from "../../data/siteContent";
-import Container from "../ui/Container";
+import { faqs } from "../../../data/siteContent";
+import Container from "../../ui/Container";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function FAQ() {
@@ -40,7 +40,10 @@ export default function FAQ() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.08 } },
+          }}
           className="border-t border-line"
         >
           {faqs.map((faq, index) => {
@@ -49,7 +52,10 @@ export default function FAQ() {
             return (
               <motion.article
                 key={faq.question}
-                variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
+                variants={{
+                  hidden: { opacity: 0, y: 24 },
+                  show: { opacity: 1, y: 0 },
+                }}
                 transition={{ duration: 0.45 }}
                 className="border-b border-line"
               >

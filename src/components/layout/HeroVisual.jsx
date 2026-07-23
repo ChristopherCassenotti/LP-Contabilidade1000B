@@ -38,43 +38,6 @@ function OpportunityChart() {
   );
 }
 
-function MonitoringChart() {
-  return (
-    <div className="mt-3 h-[70px]" aria-hidden="true">
-      <svg
-        viewBox="0 0 240 80"
-        className="h-full w-full overflow-visible"
-        fill="none"
-      >
-        <defs>
-          <linearGradient id="monitoring-area" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#28bdf1" stopOpacity="0.55" />
-            <stop offset="100%" stopColor="#28bdf1" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
-        <path
-          d="M0 67C18 60 28 56 41 42C56 26 69 21 84 30C105 42 119 34 135 28C154 20 163 31 180 35C198 40 213 33 240 25V80H0Z"
-          fill="url(#monitoring-area)"
-        />
-
-        <path
-          d="M0 67C18 60 28 56 41 42C56 26 69 21 84 30C105 42 119 34 135 28C154 20 163 31 180 35C198 40 213 33 240 25"
-          stroke="#22b8ee"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-
-        <g fill="#a7b3c7">
-          {[10, 48, 86, 124, 162, 200, 238].map((x) => (
-            <circle key={x} cx={x} cy="75" r="1.5" />
-          ))}
-        </g>
-      </svg>
-    </div>
-  );
-}
-
 export default function HeroVisual() {
   return (
     <div
@@ -89,68 +52,6 @@ export default function HeroVisual() {
         lg:h-[540px]
       "
     >
-      {/* Card de oportunidades */}
-      <motion.article
-        initial={{ opacity: 0, x: -35, y: 15 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.65, delay: 0.55 }}
-        className="
-          absolute
-          left-0
-          top-[130px]
-          z-10
-          w-[58%]
-          rounded-2xl
-          bg-white
-          p-4
-          shadow-[0_20px_60px_rgba(0,20,65,0.18)]
-          sm:top-[165px]
-          sm:w-[54%]
-          sm:p-5
-        "
-      >
-        <p className="text-[11px] font-semibold text-[#172033] sm:text-sm">
-          Valor em oportunidades
-        </p>
-
-        <strong className="mt-1 block text-base font-bold text-[#16396c] sm:text-xl">
-          + R$
-        </strong>
-
-        <OpportunityChart />
-      </motion.article>
-
-      {/* Card de licitações */}
-      <motion.article
-        initial={{ opacity: 0, x: 35, y: -15 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.65, delay: 0.7 }}
-        className="
-          absolute
-          right-0
-          top-0
-          z-10
-          w-[53%]
-          rounded-2xl
-          bg-white
-          p-4
-          text-right
-          shadow-[0_20px_60px_rgba(0,20,65,0.18)]
-          sm:w-[49%]
-          sm:p-5
-        "
-      >
-        <p className="text-[11px] font-semibold text-[#172033] sm:text-sm">
-          Licitações monitoradas
-        </p>
-
-        <strong className="mt-1 block text-base font-bold text-[#16396c] sm:text-xl">
-          + Editais ativos
-        </strong>
-
-        <MonitoringChart />
-      </motion.article>
-
       {/* Pessoa */}
       <motion.img
         initial={{ opacity: 0, y: 45, scale: 0.96 }}
@@ -205,7 +106,7 @@ export default function HeroVisual() {
         "
       >
         <img
-          src="/assets/logo-1000b.png"
+          src="/assets/logo-1000b.webp"
           alt="1000B Assessoria Contábil"
           className="w-full object-contain"
         />

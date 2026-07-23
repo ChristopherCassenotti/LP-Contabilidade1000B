@@ -26,9 +26,10 @@ export default function Header() {
       initial={{ y: -90, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className="sticky top-0 z-50 border-b border-white/10 bg-navy-900/95 text-white backdrop-blur-xl">
+      className="sticky top-0 z-50 border-b border-white/10 bg-navy-900/95 text-white backdrop-blur-xl"
+    >
       <Container className="grid min-h-[78px] grid-cols-[1fr_auto] items-center gap-6 lg:grid-cols-[170px_1fr_auto]">
-        <a href="#inicio" aria-label="1000B Assessoria Contábil — Início">
+        <a href="/" aria-label="1000B Assessoria Contábil — Início">
           <img
             src="/assets/logo-1000b.webp"
             alt="1000B Assessoria Contábil"
