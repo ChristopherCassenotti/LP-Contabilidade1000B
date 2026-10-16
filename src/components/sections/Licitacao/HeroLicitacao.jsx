@@ -58,11 +58,13 @@ export default function HeroLicitacao() {
               show: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.65 }}
-            className="text-[clamp(2.8rem,5.2vw,4.3rem)] font-semibold leading-[1.02]"
+            className="text-[clamp(2.8rem,5.2vw,4.0rem)] font-semibold leading-[1.02]"
           >
-            Sua empresa quer vender
+            Sua empresa está preparada
             <br />
-            <span className="text-blue-500">para o poder público?</span>
+            <span className="text-blue-500">
+              para participar de licitações?
+            </span>
           </motion.h1>
           <motion.p
             variants={{
@@ -72,13 +74,11 @@ export default function HeroLicitacao() {
             transition={{ duration: 0.6 }}
             className="mt-6 font-medium leading-relaxed text-white/75 text-lg"
           >
-            Especialistas em licitações, processos licitatórios e regularização
-            de dívidas.{" "}
+            Conte com suporte contábil especializado{" "}
             <span className="text-blue-500">
-              Edital, documentação, certidões e habilitação com quem tem mais de
-              50 anos de experiência.
+              especializado em balanço, SICAF, certidões
             </span>{" "}
-            Transformamos a burocracia em solução.
+            e documentação para habilitação.
           </motion.p>
 
           <motion.div
@@ -89,7 +89,7 @@ export default function HeroLicitacao() {
             transition={{ duration: 0.5 }}
             className=" mt-8 flex flex-col  gap-3 sm:flex-row"
           >
-            <WhatsAppButton message="Olá, quero preparar minha empresa para licitações">
+            <WhatsAppButton message="Quero analisar minha empresa">
               Falar com um contador
             </WhatsAppButton>
           </motion.div>
