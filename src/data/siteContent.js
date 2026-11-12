@@ -1,7 +1,7 @@
 export const company = {
   name: '1000B Assessoria Contábil',
-  whatsapp: '554235223145',
-  phone: '(42) 3522-3145',
+  whatsapp: '554235223125',
+  phone: '(42) 3522-3125',
   email: 'contato@1000b.com.br',
   instagram: '@assessoria.1000b',
   address: 'R. Profa. Amazília, 593, Centro, União da Vitória/PR',
